@@ -14,7 +14,7 @@ Here’s a perfect example of the app failing a query with a small context (`k=3
 
 > This shows the real-world process of finding a failure and engineering a solution.
 
-![https://github.com/user-attachments/assets/3e114376-8b16-447f-ae93-982ecb281a8d]
+https://github.com/user-attachments/assets/3e114376-8b16-447f-ae93-982ecb281a8d
 
 *(This screenshot shows the app failing to find the “list of contributions” with k=3, and then succeeding after running the `set k=10` command).*
 
