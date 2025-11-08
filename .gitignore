@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+.venv/
+
+# Secret API keys
+.env
+
+# Local data stores
+faiss_store/
+
+# Python cache
+src/__pycache__/
+__pycache__/
