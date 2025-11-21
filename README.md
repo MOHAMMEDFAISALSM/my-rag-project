@@ -24,7 +24,7 @@ A professional Retrieval-Augmented Generation (RAG) chatbot with a stunning Stre
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/MOHAMMEDFAISALSM/my-rag-project.git
    cd my-rag-project
    ```
 
@@ -104,7 +104,7 @@ In the sidebar, you can customize:
 
 Edit `streamlit_app.py` line ~280:
 ```python
-return ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp", temperature=0.7)
+return ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
 ```
 
 ## 🌐 Deployment
@@ -160,8 +160,8 @@ This project is licensed under the MIT License.
 
 **Mohammed Faisal**
 
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
+- LinkedIn: https://www.linkedin.com/in/mohammed-faisal-sm-7207b9384/
+- GitHub: https://github.com/MOHAMMEDFAISALSM
 
 ## 🙏 Acknowledgments
 
