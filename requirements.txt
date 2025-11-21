@@ -4,7 +4,7 @@ langchain-community>=0.0.20
 pypdf
 sentence-transformers
 faiss-cpu
-langchain-google-genai
+langchain-google-genai>=1.0.3
 python-dotenv
 langchain-text-splitters
 langchain-huggingface
