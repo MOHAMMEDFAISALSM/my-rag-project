@@ -474,7 +474,7 @@ if "vector_store" not in st.session_state:
 # --- Caching Resources ---
 @st.cache_resource
 def get_cached_llm():
-    return ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.7)
+    return ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
 
 @st.cache_resource
 def get_cached_embeddings():
