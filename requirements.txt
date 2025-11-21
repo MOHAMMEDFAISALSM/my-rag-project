@@ -1,6 +1,6 @@
-langchain
-langchain-core
-langchain-community
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
 pypdf
 sentence-transformers
 faiss-cpu
@@ -8,3 +8,4 @@ langchain-google-genai
 python-dotenv
 langchain-text-splitters
 langchain-huggingface
+streamlit

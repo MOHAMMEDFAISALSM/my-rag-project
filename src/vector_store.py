@@ -6,38 +6,29 @@ import os
 STORE_PATH = "faiss_store"
 
 def get_embeddings():
-    """
-    Initializes the embedding model.
-    """
-    # This will download the model "all-MiniLM-L6-v2"
+    """Initializes the embedding model."""
     return HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 def build_vector_store(documents, embeddings):
-    """
-    Builds and saves the FAISS vector store from documents.
-    """
+    """Builds the FAISS vector store from documents (in-memory)."""
     print("Chunking documents...")
-    # Split documents into smaller chunks
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     docs = text_splitter.split_documents(documents)
     
     print("Building vector store...")
-    # Create the FAISS vector store from the chunks
-    store = FAISS.from_documents(docs, embeddings)
+    texts = [doc.page_content for doc in docs]
+    metadatas = [doc.metadata for doc in docs]
     
-    print(f"Saving vector store to {STORE_PATH}...")
-    # Save the store locally
-    store.save_local(STORE_PATH)
-    print("Vector store built and saved.")
+    # Simple, direct approach
+    store = FAISS.from_texts(texts, embeddings, metadatas=metadatas)
+    
+    print("Vector store built successfully.")
     return store
 
 def load_vector_store(embeddings):
-    """
-    Loads an existing FAISS vector store.
-    """
+    """Loads an existing FAISS vector store."""
     if os.path.exists(STORE_PATH):
         print(f"Loading vector store from {STORE_PATH}...")
-        # Add allow_dangerous_deserialization=True
         store = FAISS.load_local(
             STORE_PATH, 
             embeddings, 

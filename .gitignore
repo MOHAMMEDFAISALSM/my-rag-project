@@ -1,13 +1,44 @@
-# Python virtual environment
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
 venv/
 .venv/
+env/
+ENV/
 
-# Secret API keys
+# Environment Variables (IMPORTANT: Protects API Keys)
 .env
+.env.local
+.env.*.local
 
-# Local data stores
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project Specific
 faiss_store/
+data/
+*.pdf
 
-# Python cache
-src/__pycache__/
-__pycache__/
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+list_models.py
