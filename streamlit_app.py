@@ -12,7 +12,16 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from src.data_loader import load_documents
 from src.vector_store import get_embeddings, build_vector_store, load_vector_store
 
+# Load environment variables
 load_dotenv()
+
+# Set API key - works for both local (.env) and Streamlit Cloud (secrets)
+if "GOOGLE_API_KEY" not in os.environ:
+    try:
+        os.environ["GOOGLE_API_KEY"] = st.secrets["GOOGLE_API_KEY"]
+    except:
+        st.error("⚠️ GOOGLE_API_KEY not found! Please add it to Streamlit Cloud Secrets or .env file")
+        st.stop()
 
 # --- Page Config ---
 st.set_page_config(
@@ -465,7 +474,7 @@ if "vector_store" not in st.session_state:
 # --- Caching Resources ---
 @st.cache_resource
 def get_cached_llm():
-    return ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp", temperature=0.7)
+    return ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
 
 @st.cache_resource
 def get_cached_embeddings():
